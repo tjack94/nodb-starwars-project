@@ -1,0 +1,115 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-image: url(https://blog.axur.com/wp-content/uploads/2017/08/deep-space-one.jpg)
+}
+.new-planet-form{
+  margin: 15px 5px 20px
+}
+input{
+  margin: 0 5px
+}
+.planet-list{
+  column-count: 7;
+  column-gap: 30px
+}
+.planet-boxes{
+  background-color: lightblue;
+  border-radius: 40%;
+  font-weight: 600;
+  cursor: pointer;
+  width: 150px;
+  height: 28px;
+  margin-left: 15px;
+  align-content: center;
+  justify-content: center;
+  padding-top: 5px;
+  box-shadow: 0 2px 5px 2px grey
+
+}
+.planet-boxes:hover{
+  background-color: rgb(2, 2, 85);
+  color: lightblue
+}
+.visited-planets{
+  box-shadow: 0 2px 5px 2px grey;
+  width: 200px;
+  margin: 15px;
+  padding:0 0 15px;
+  background-color: black;
+  color: lightblue;
+}
+.visited-planets:hover{
+  background-color: rgb(51, 50, 50)
+
+}
+.visited-planets span{
+  font-weight: bold
+}
+.delete-button{
+  float: right;
+  background-color: transparent;
+  color: transparent;
+  border: none
+}
+.delete-button:hover{
+  background-color: red;
+  color: white;
+  cursor: pointer;
+  
+ 
+}
+.visited-list{
+  display: flex;
+  flex-wrap: wrap
+}
+h2{
+  color: white;
+}
+.show-planet-form,
+.get-known-planets{
+  background-color: rgb(229, 177, 58);
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  box-shadow: 0 2px 2px 0 grey;
+  cursor: pointer;
+  margin: 0 50px
+  
+}
+.get-known-planets{
+  width: 122px;
+  height: 20px
+}
+.get-known-planets:hover{
+  width: 125px;
+  height: 23px;
+}
+.show-planet-form{
+  width: 173px;
+  height: 20px;
+}
+.show-planet-form:hover{
+  width: 176px;
+  height: 23px;
+}
+.hide-button{
+  background-color: transparent;
+  color: grey;
+  margin: 10px;
+  cursor: pointer;
+}
+.hide-button:hover{
+  background-color: grey;
+  color: white;
+}
+h3{
+  color: white;
+}
+.log-button{
+  background-color: lightblue;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+}
