@@ -138,10 +138,13 @@ hideNewPlanetForm(){
 		return (
 			<div className="App">
 				<Header>My Travels in a Galaxy Far Far Away...</Header>
-        {discoverButton}
-        {showForm}
+				{showForm}
+		<div className="button-container">
+		{discoverButton}
+       
 
 				{GetPlanetsButton}
+				</div>
 				<div>{HideButton}</div>
 				<div className="planet-list">{planetList}</div>
 				<h2>Planets I have visited:</h2>

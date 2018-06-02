@@ -75,24 +75,30 @@ h2{
   font-weight: bold;
   box-shadow: 0 2px 2px 0 grey;
   cursor: pointer;
-  margin: 0 50px
+  margin: 0 50px;
+  font-size: 20px
   
 }
+.button-container{
+  display: flex;
+  align-items: center;
+  justify-content: center
+}
 .get-known-planets{
-  width: 122px;
-  height: 20px
+  width: 222px;
+  height: 80px
 }
 .get-known-planets:hover{
-  width: 125px;
-  height: 23px;
+  width: 225px;
+  height: 83px;
 }
 .show-planet-form{
-  width: 173px;
-  height: 20px;
+  width: 273px;
+  height: 80px;
 }
 .show-planet-form:hover{
-  width: 176px;
-  height: 23px;
+  width: 276px;
+  height: 83px;
 }
 .hide-button{
   background-color: transparent;
