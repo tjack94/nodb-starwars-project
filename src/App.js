@@ -14,7 +14,8 @@ class App extends Component {
 			planet: null,
 			planetIndex: -1,
 			displayPlanets: false,
-			displayForm: false
+			displayForm: false,
+			editPlanet: false,
 		};
 	}
 	componentWillMount() {
@@ -38,11 +39,17 @@ class App extends Component {
 	discoverPlanet = (response) => {
 		this.setState({ visited: [ ...response.data ] });
 	};
+	beginPlanetEdit(planet, index){
+		this.setState( { editPlanet: true
+		 }, ()=> this.editPlanet(planet, index)
+		 )
+	}
 	editPlanet(planet, index) {
 		this.setState({
 			planet,
 			planetIndex: index
-		});
+		})
+	
 	}
 	deletePlanet(index) {
 		var visitedPlanets = this.state.visited;
@@ -51,7 +58,8 @@ class App extends Component {
 			this.setState({
 				visited: visitedPlanets,
 				planet: null,
-				planetIndex: -1
+				planetIndex: -1,
+				
 			});
 		});
 	}
@@ -62,7 +70,8 @@ class App extends Component {
 		this.setState({
 			visited: editedPlanets,
 			planet: null,
-			planetIndex: -1
+			planetIndex: -1,
+			editPlanet: false
 		});
 	};
 	visitPlanet(planet) {
@@ -92,7 +101,7 @@ hideNewPlanetForm(){
 			: '';
 
 		const visitedPlanetsList = this.state.visited.map((planet, index) => (
-			<p className="visited-planets" key={index} onClick={() => this.editPlanet(planet, index)}>
+			<p className="visited-planets" key={index} onClick={() => this.beginPlanetEdit(planet, index)}>
 				<Button className="delete-button" onClick={() => this.deletePlanet(index)}>
 					X
 				</Button>
@@ -123,13 +132,13 @@ hideNewPlanetForm(){
 			);
 		const newOrEdit = this.state.planet ? <h3>Edit Planet</h3> : <h3>Log New Planet Discovery</h3>;
 		const showForm =
-			this.state.planet || this.state.displayForm ? (
+			this.state.editPlanet || this.state.displayForm ? (
 				<DiscoverPlanet
 					visitPlanet={this.discoverPlanet}
 					editPlanet={this.state.planet}
 					planetIndex={this.state.planetIndex}
-          updatePlanet={this.updatePlanet}
-          hideForm= {()=>this.hideNewPlanetForm()}
+          			updatePlanet={this.updatePlanet}
+          			hideForm= {()=>this.hideNewPlanetForm()}
 				/>
 			) : (
 				''
